@@ -1,0 +1,42 @@
+{
+  "fileName": "evaluation-set-default.json",
+  "id": "c8cdd3cc-eb1e-424c-8f54-282a0c627895",
+  "name": "Default Evaluation Set",
+  "batchSize": 10,
+  "evaluatorRefs": [
+    "ccbfb0be-7506-4e19-ab7c-6d7a5d100fba"
+  ],
+  "evaluations": [
+    {
+      "id": "4f547802-50f2-48fa-931c-ff3f354ad7a3",
+      "name": "Debug Run 9/25/2026, 10:22:17 PM",
+      "inputs": {
+        "name": "Marisol Bennett",
+        "age": 42,
+        "gender": "Female",
+        "symptoms": "Intermittent lower back pain and stiffness, worse after sitting for long periods.",
+        "symptomsDuration": "About 3 weeks",
+        "severity": "Moderate",
+        "action": "Schedule a routine appointment with a healthcare provider."
+      },
+      "expectedOutput": {
+        "Email_Body": "Name: Marisol Bennett\nAge: 42\nGender: Female\nSymptoms: Intermittent lower back pain and stiffness, worse after sitting for long periods.\nSymptoms Duration: About 3 weeks\nSeverity: Moderate\nRecommended Action: Schedule a routine appointment with a healthcare provider.\nBest regards,\nPatient Assistance System."
+      },
+      "expectedAgentBehavior": "",
+      "simulationInstructions": "",
+      "simulateInput": false,
+      "inputGenerationInstructions": "",
+      "simulateTools": false,
+      "evalSetId": "c8cdd3cc-eb1e-424c-8f54-282a0c627895",
+      "createdAt": "2026-09-25T16:52:17.700Z",
+      "updatedAt": "2026-09-25T16:52:17.700Z",
+      "source": "firstSuccessfulRun"
+    }
+  ],
+  "modelSettings": [],
+  "createdAt": "2026-09-25T16:42:04.437Z",
+  "updatedAt": "2026-09-25T16:52:17.700Z",
+  "agentMemoryEnabled": false,
+  "agentMemorySettings": [],
+  "lineByLineEvaluation": false
+}

@@ -1,0 +1,151 @@
+{
+  "version": "1.2.0",
+  "settings": {
+    "model": "gpt-5.6-terra",
+    "maxTokens": 128000,
+    "temperature": 0,
+    "engine": "basic-v2",
+    "maxIterations": 25,
+    "mode": "standard"
+  },
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string",
+        "description": "The patient's name. Preserve the supplied text exactly; do not correct, reformat, or infer it."
+      },
+      "age": {
+        "type": "integer",
+        "description": "The patient's age in years. Use the supplied whole number exactly; do not infer or alter it."
+      },
+      "gender": {
+        "type": "string",
+        "description": "The patient's gender as supplied. Preserve the supplied text exactly and do not infer or reinterpret it."
+      },
+      "symptoms": {
+        "type": "string",
+        "description": "The patient's reported symptoms. Preserve the supplied text and meaning exactly; do not diagnose, interpret, or add details."
+      },
+      "symptomsDuration": {
+        "type": "string",
+        "description": "The supplied duration of the patient's symptoms. Preserve the supplied text exactly; do not convert, summarize, or infer it."
+      },
+      "severity": {
+        "type": "string",
+        "description": "The patient's supplied symptom severity. Preserve the supplied text exactly; do not reinterpret, normalize, or infer it."
+      },
+      "action": {
+        "type": "string",
+        "description": "The recommended action supplied for the email. Reproduce this value exactly in the Recommended Action line without editing or adding information."
+      }
+    },
+    "required": [
+      "name",
+      "age",
+      "gender",
+      "symptoms",
+      "symptomsDuration",
+      "severity",
+      "action"
+    ]
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "Email_Body": {
+        "type": "string",
+        "description": "One plain-text email body containing Name, Age, Gender, Symptoms, Symptoms Duration, and Severity on separate labeled lines, followed by a Recommended Action line whose value is reproduced exactly from the action input, and ending with the exact lines \"Best regards,\" and \"Patient Assistance System.\". Do not include a subject, diagnosis, interpretation, or any additional content."
+      }
+    },
+    "required": [
+      "Email_Body"
+    ]
+  },
+  "metadata": {
+    "storageVersion": "50.0.0",
+    "isConversational": false,
+    "showProjectCreationExperience": false,
+    "targetRuntime": "pythonAgent"
+  },
+  "type": "lowCode",
+  "projectId": "a3197572-71e7-4c5e-a15e-5efd86c1d307",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are the Patient Email Generation Agent. Generate one concise plain-text email body from the supplied patient intake inputs. Preserve every supplied detail exactly and do not diagnose, interpret, infer, or add information.\n\nTool rules:\n- No tools, contexts, or escalations are configured. Work only from the seven supplied inputs.\n- Treat all input values as provided data. Do not validate, correct, normalize, summarize, paraphrase, or reinterpret them.\n\nWork steps:\n1. Create one plain-text email body with these labeled lines in this exact order: `Name`, `Age`, `Gender`, `Symptoms`, `Symptoms Duration`, `Severity`, and `Recommended Action`.\n2. Put each patient detail on its own line. Copy the values from the corresponding inputs without changing their wording, capitalization, punctuation, numbers, or meaning.\n3. On the `Recommended Action` line, reproduce the `action` input exactly as provided after the label. Do not edit, shorten, expand, interpret, or supplement it.\n4. End the email body with these exact two lines, in this order, and with no content after them:\n`Best regards,`\n`Patient Assistance System.`\n5. Do not add a subject, greeting, explanation, diagnosis, medical condition, cause, medication, treatment, procedure, recommendation, or any other text.\n\nOutput rules:\n- Return ONLY JSON that matches the configured output schema exactly. No extra keys, no markdown, and no extra text.\n- Return exactly one string field named `Email_Body`.\n- `Email_Body` must contain only the single plain-text email body described above.\n\nFinal reminder: copy all seven input values exactly, place the labeled details on separate lines in the required order, reproduce Recommended Action exactly, and end with `Best regards,` followed by `Patient Assistance System.`.",
+      "contentTokens": [
+        {
+          "type": "simpleText",
+          "rawString": "You are the Patient Email Generation Agent. Generate one concise plain-text email body from the supplied patient intake inputs. Preserve every supplied detail exactly and do not diagnose, interpret, infer, or add information.\n\nTool rules:\n- No tools, contexts, or escalations are configured. Work only from the seven supplied inputs.\n- Treat all input values as provided data. Do not validate, correct, normalize, summarize, paraphrase, or reinterpret them.\n\nWork steps:\n1. Create one plain-text email body with these labeled lines in this exact order: `Name`, `Age`, `Gender`, `Symptoms`, `Symptoms Duration`, `Severity`, and `Recommended Action`.\n2. Put each patient detail on its own line. Copy the values from the corresponding inputs without changing their wording, capitalization, punctuation, numbers, or meaning.\n3. On the `Recommended Action` line, reproduce the `action` input exactly as provided after the label. Do not edit, shorten, expand, interpret, or supplement it.\n4. End the email body with these exact two lines, in this order, and with no content after them:\n`Best regards,`\n`Patient Assistance System.`\n5. Do not add a subject, greeting, explanation, diagnosis, medical condition, cause, medication, treatment, procedure, recommendation, or any other text.\n\nOutput rules:\n- Return ONLY JSON that matches the configured output schema exactly. No extra keys, no markdown, and no extra text.\n- Return exactly one string field named `Email_Body`.\n- `Email_Body` must contain only the single plain-text email body described above.\n\nFinal reminder: copy all seven input values exactly, place the labeled details on separate lines in the required order, reproduce Recommended Action exactly, and end with `Best regards,` followed by `Patient Assistance System.`."
+        }
+      ]
+    },
+    {
+      "role": "user",
+      "content": "Generate one single plain-text email body using only the supplied patient details below. Do not diagnose, interpret, infer, summarize, correct, normalize, or add information. Preserve each provided value exactly as supplied.\n\n<inputs>\n- Name: <name>{{input.name}}</name>\n- Age: <age>{{input.age}}</age>\n- Gender: <gender>{{input.gender}}</gender>\n- Symptoms: <symptoms>{{input.symptoms}}</symptoms>\n- Symptoms Duration: <symptomsDuration>{{input.symptomsDuration}}</symptomsDuration>\n- Severity: <severity>{{input.severity}}</severity>\n- Action: <action>{{input.action}}</action>\n</inputs>\n\nBuild `Email_Body` with exactly these labeled lines, in this order, with one detail per line:\nName: [the exact Name value]\nAge: [the exact Age value]\nGender: [the exact Gender value]\nSymptoms: [the exact Symptoms value]\nSymptoms Duration: [the exact Symptoms Duration value]\nSeverity: [the exact Severity value]\nRecommended Action: [the exact Action value]\n\nAfter the Recommended Action line, end with exactly these two lines and no text after them:\nBest regards,\nPatient Assistance System.\n\nThe Action value after `Recommended Action:` must be reproduced exactly as provided, including wording, capitalization, punctuation, numbers, and meaning. Apply the same exact-preservation rule to all other input values. Do not add a subject, greeting, diagnosis, interpretation, medical condition, cause, medication, treatment, procedure, recommendation, explanation, or any other content.\n\nReturn ONLY JSON matching the output schema exactly, with only the single string field `Email_Body`. Do not return markdown or any text outside the JSON.",
+      "contentTokens": [
+        {
+          "type": "simpleText",
+          "rawString": "Generate one single plain-text email body using only the supplied patient details below. Do not diagnose, interpret, infer, summarize, correct, normalize, or add information. Preserve each provided value exactly as supplied.\n\n<inputs>\n- Name: <name>"
+        },
+        {
+          "type": "variable",
+          "rawString": "input.name"
+        },
+        {
+          "type": "simpleText",
+          "rawString": "</name>\n- Age: <age>"
+        },
+        {
+          "type": "variable",
+          "rawString": "input.age"
+        },
+        {
+          "type": "simpleText",
+          "rawString": "</age>\n- Gender: <gender>"
+        },
+        {
+          "type": "variable",
+          "rawString": "input.gender"
+        },
+        {
+          "type": "simpleText",
+          "rawString": "</gender>\n- Symptoms: <symptoms>"
+        },
+        {
+          "type": "variable",
+          "rawString": "input.symptoms"
+        },
+        {
+          "type": "simpleText",
+          "rawString": "</symptoms>\n- Symptoms Duration: <symptomsDuration>"
+        },
+        {
+          "type": "variable",
+          "rawString": "input.symptomsDuration"
+        },
+        {
+          "type": "simpleText",
+          "rawString": "</symptomsDuration>\n- Severity: <severity>"
+        },
+        {
+          "type": "variable",
+          "rawString": "input.severity"
+        },
+        {
+          "type": "simpleText",
+          "rawString": "</severity>\n- Action: <action>"
+        },
+        {
+          "type": "variable",
+          "rawString": "input.action"
+        },
+        {
+          "type": "simpleText",
+          "rawString": "</action>\n</inputs>\n\nBuild `Email_Body` with exactly these labeled lines, in this order, with one detail per line:\nName: [the exact Name value]\nAge: [the exact Age value]\nGender: [the exact Gender value]\nSymptoms: [the exact Symptoms value]\nSymptoms Duration: [the exact Symptoms Duration value]\nSeverity: [the exact Severity value]\nRecommended Action: [the exact Action value]\n\nAfter the Recommended Action line, end with exactly these two lines and no text after them:\nBest regards,\nPatient Assistance System.\n\nThe Action value after `Recommended Action:` must be reproduced exactly as provided, including wording, capitalization, punctuation, numbers, and meaning. Apply the same exact-preservation rule to all other input values. Do not add a subject, greeting, diagnosis, interpretation, medical condition, cause, medication, treatment, procedure, recommendation, explanation, or any other content.\n\nReturn ONLY JSON matching the output schema exactly, with only the single string field `Email_Body`. Do not return markdown or any text outside the JSON."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "$schema": "https://cloud.uipath.com/draft/2024-12/entry-point",
+  "$id": "entry-points.json",
+  "entryPoints": [
+    {
+      "filePath": "/content/agent.json",
+      "type": "agent",
+      "uniqueId": "0ceb0f62-4a66-4dc3-ab41-5fa4c18aafcf",
+      "input": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The patient's name. Preserve the supplied text exactly; do not correct, reformat, or infer it."
+          },
+          "age": {
+            "type": "integer",
+            "description": "The patient's age in years. Use the supplied whole number exactly; do not infer or alter it."
+          },
+          "gender": {
+            "type": "string",
+            "description": "The patient's gender as supplied. Preserve the supplied text exactly and do not infer or reinterpret it."
+          },
+          "symptoms": {
+            "type": "string",
+            "description": "The patient's reported symptoms. Preserve the supplied text and meaning exactly; do not diagnose, interpret, or add details."
+          },
+          "symptomsDuration": {
+            "type": "string",
+            "description": "The supplied duration of the patient's symptoms. Preserve the supplied text exactly; do not convert, summarize, or infer it."
+          },
+          "severity": {
+            "type": "string",
+            "description": "The patient's supplied symptom severity. Preserve the supplied text exactly; do not reinterpret, normalize, or infer it."
+          },
+          "action": {
+            "type": "string",
+            "description": "The recommended action supplied for the email. Reproduce this value exactly in the Recommended Action line without editing or adding information."
+          }
+        },
+        "required": [
+          "name",
+          "age",
+          "gender",
+          "symptoms",
+          "symptomsDuration",
+          "severity",
+          "action"
+        ]
+      },
+      "output": {
+        "type": "object",
+        "properties": {
+          "Email_Body": {
+            "type": "string",
+            "description": "One plain-text email body containing Name, Age, Gender, Symptoms, Symptoms Duration, and Severity on separate labeled lines, followed by a Recommended Action line whose value is reproduced exactly from the action input, and ending with the exact lines \"Best regards,\" and \"Patient Assistance System.\". Do not include a subject, diagnosis, interpretation, or any additional content."
+          }
+        },
+        "required": [
+          "Email_Body"
+        ]
+      }
+    }
+  ]
+}

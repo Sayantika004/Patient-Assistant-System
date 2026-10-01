@@ -1,0 +1,29 @@
+{
+  "SolutionId": "241f5200-5a53-4960-e318-08df19d6041f",
+  "Projects": [
+    {
+      "ProjectId": "a53a1b3c-f9fc-4c63-b016-75faf1fe0348",
+      "ProjectRelativePath": "Maestro BPMN/project.uiproj"
+    },
+    {
+      "ProjectId": "9161916a-717e-40b0-ad39-ace87ea1f31b",
+      "ProjectRelativePath": "Query_Assistant_Agent/project.uiproj"
+    },
+    {
+      "ProjectId": "c7368eaf-0290-43a8-b9e5-b997eec0fd6c",
+      "ProjectRelativePath": "Severity_Analysis_Agent/project.uiproj"
+    },
+    {
+      "ProjectId": "74145ab6-d25e-41a7-a61d-c62d35881090",
+      "ProjectRelativePath": "SendEmail/project.uiproj"
+    },
+    {
+      "ProjectId": "9abb9475-9847-4cf1-b6ce-dead17c7e886",
+      "ProjectRelativePath": "Doctor Approval App/project.uiproj"
+    },
+    {
+      "ProjectId": "1b2a7467-0310-4689-b461-f49945d75527",
+      "ProjectRelativePath": "Email_Generation_Agent/project.uiproj"
+    }
+  ]
+}

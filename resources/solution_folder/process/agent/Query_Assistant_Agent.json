@@ -1,0 +1,61 @@
+{
+  "docVersion": "1.0.0",
+  "resource": {
+    "name": "Query_Assistant_Agent",
+    "kind": "process",
+    "type": "agent",
+    "apiVersion": "orchestrator.uipath.com/v1",
+    "projectKey": "6fa481b4-5205-4a17-97c5-124aedd5ec24",
+    "isOverridable": true,
+    "dependencies": [
+      {
+        "name": "Query_Assistant_Agent",
+        "kind": "package"
+      }
+    ],
+    "runtimeDependencies": [],
+    "files": [],
+    "folders": [
+      {
+        "fullyQualifiedName": "solution_folder"
+      }
+    ],
+    "spec": {
+      "targetRuntime": null,
+      "referencedAssets": null,
+      "entryPointUniqueId": null,
+      "inputArgumentsSchema": null,
+      "outputArgumentsSchema": null,
+      "inputArgumentsSchemaV2": null,
+      "outputArgumentsSchemaV2": null,
+      "type": "Agent",
+      "name": "Query_Assistant_Agent",
+      "description": null,
+      "package": {
+        "key": "c9106b28-4621-4deb-88f0-cdc8755fc633"
+      },
+      "packageName": "Patient_Assistant._System.agent.Query_Assistant_Agent",
+      "packageVersion": null,
+      "entryPointName": null,
+      "inputArguments": null,
+      "hiddenForAttendedUser": false,
+      "alwaysRunning": false,
+      "autoStartProcess": false,
+      "targetFrameworkValue": "Portable",
+      "agentMemory": false,
+      "environmentVariables": null,
+      "isConversational": false,
+      "retentionAction": "Delete",
+      "retentionPeriod": 30,
+      "retentionBucketRef": null,
+      "staleRetentionAction": "Delete",
+      "staleRetentionPeriod": 180,
+      "staleRetentionBucketRef": null,
+      "entryPoints": null,
+      "connections": null,
+      "tags": []
+    },
+    "locks": [],
+    "key": "f57ae4fa-621a-44e5-92d3-d262009aa939"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "version": "3.0.0.0",
+  "bundleHash": "za9nuAaUPL0B1dTpP12BF5C463ZEt8WNOtUONAwhE",
+  "addedAssemblyNames": [],
+  "discardedAssemblyNames": [
+    "Apps.action.gl7UBhMEc3wg",
+    "Apps.form.PatientEscalationFormPage.gc30SmsEc3wg",
+    "Apps.form.PatientEscalationFormPage.Expressions.LxayJg8RkJ1qCqaJ3UyUoo3",
+    "Apps.form.PatientEscalationFormPage.Expressions.xw4F03Jqw5I1hLFkn3984rX",
+    "Apps.form.PatientEscalationFormPage.gyh69msEc3wg",
+    "Apps.form.MainPage.gaE9lgMEc3wg",
+    "Apps.form.MainPage.Expressions.2IpPX1cNnhO1rKXWH1KPAd62"
+  ],
+  "discardedAssemblyReplacements": {
+    "Apps.action.gl7UBhMEc3wg": "Apps.action.giq6WicEc3wg",
+    "Apps.form.PatientEscalationFormPage.gc30SmsEc3wg": "Apps.form.PatientEscalationFormPage.gyh69msEc3wg",
+    "Apps.form.PatientEscalationFormPage.gyh69msEc3wg": "Apps.form.PatientEscalationFormPage.gf4en8Ec3wg",
+    "Apps.form.MainPage.gaE9lgMEc3wg": null
+  },
+  "assembliesJitInfo": {}
+}

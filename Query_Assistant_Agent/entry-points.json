@@ -1,0 +1,80 @@
+{
+  "$schema": "https://cloud.uipath.com/draft/2024-12/entry-point",
+  "$id": "entry-points.json",
+  "entryPoints": [
+    {
+      "filePath": "/content/agent.json",
+      "type": "agent",
+      "uniqueId": "8ec4af81-43aa-4389-aed7-5862be511651",
+      "input": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The patient's name. Caller-provided text; preserve the supplied name without guessing or correcting it. If empty or unavailable, use \"Not provided\" in the summary."
+          },
+          "age": {
+            "type": "integer",
+            "description": "The patient's age in years. Caller-provided whole number; use the supplied value without inference. If unavailable, use \"Not provided\" in the summary."
+          },
+          "gender": {
+            "type": "string",
+            "description": "The patient's reported gender. Caller-provided text; preserve the supplied wording without inference. If empty or unavailable, use \"Not provided\" in the summary."
+          },
+          "symptoms": {
+            "type": "string",
+            "description": "The symptoms reported by the patient. Caller-provided text; preserve the original meaning and do not add interpretation. If empty or unavailable, use \"Not provided\" in the summary."
+          },
+          "symptomsDuration": {
+            "type": "string",
+            "description": "The duration of the reported symptoms. Caller-provided text; describe it clearly without converting or guessing. If empty or unavailable, use \"Not provided\" in the summary."
+          },
+          "email": {
+            "type": "string",
+            "description": "The patient's email address. Caller-provided text; preserve it as supplied and do not validate or infer an alternative. If empty or unavailable, use \"Not provided\" in the summary."
+          }
+        },
+        "required": [
+          "name",
+          "age",
+          "gender",
+          "symptoms",
+          "symptomsDuration",
+          "email"
+        ]
+      },
+      "output": {
+        "type": "object",
+        "properties": {
+          "patientInformation": {
+            "type": "string",
+            "description": "A concise identification line containing the supplied patient name, age, gender, and email. Use \"Not provided\" for any unavailable or empty value."
+          },
+          "reportedSymptoms": {
+            "type": "string",
+            "description": "A concise restatement of the patient's reported symptoms in straightforward language, preserving the original meaning and adding no interpretation. Use \"Not provided\" if unavailable or empty."
+          },
+          "symptomDuration": {
+            "type": "string",
+            "description": "A clear, simple description of the reported symptom duration, based only on the supplied value. Use \"Not provided\" if unavailable or empty."
+          },
+          "generalObservation": {
+            "type": "string",
+            "description": "One brief, factual, neutral observation based only on the supplied information, such as noting that the reported symptoms continued for the stated period. Do not diagnose or infer a cause."
+          },
+          "disclaimer": {
+            "type": "string",
+            "description": "A brief statement that the summary is for informational purposes, is not a medical diagnosis, and that the patient should consult a licensed healthcare professional for medical advice."
+          }
+        },
+        "required": [
+          "patientInformation",
+          "reportedSymptoms",
+          "symptomDuration",
+          "generalObservation",
+          "disclaimer"
+        ]
+      }
+    }
+  ]
+}

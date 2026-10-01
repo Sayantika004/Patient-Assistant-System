@@ -1,0 +1,49 @@
+{
+  "docVersion": "1.0.0",
+  "tenants": [
+    {
+      "tenantKey": "bb1e742c-7cae-47e7-bed8-f4dce7ebc8f1",
+      "resources": [
+        {
+          "solutionResourceKey": "dbfbd5bd-b607-474d-d682-08df126a35df",
+          "reprovisioningIndex": 0,
+          "overwrite": {
+            "resourceKey": "dbfbd5bd-b607-474d-d682-08df126a35df",
+            "resourceName": "patient_symptom_dataset",
+            "folderKey": "133aa744-2876-41ad-9eb1-6df5fdc17710",
+            "folderFullyQualifiedName": "Shared",
+            "folderPath": "133aa744-2876-41ad-9eb1-6df5fdc17710",
+            "type": "Reference",
+            "kind": "index"
+          }
+        },
+        {
+          "solutionResourceKey": "d26bb3db-8415-4308-8714-9683258714a5",
+          "reprovisioningIndex": 0,
+          "overwrite": {
+            "resourceKey": "d26bb3db-8415-4308-8714-9683258714a5",
+            "resourceName": "patient_symptom_dataset",
+            "folderKey": "133aa744-2876-41ad-9eb1-6df5fdc17710",
+            "folderFullyQualifiedName": "Shared",
+            "folderPath": "133aa744-2876-41ad-9eb1-6df5fdc17710",
+            "type": "Reference",
+            "kind": "bucket"
+          }
+        },
+        {
+          "solutionResourceKey": "0b567188-4115-4442-b355-b583c1ea8ac8",
+          "reprovisioningIndex": 0,
+          "overwrite": {
+            "resourceKey": "0b567188-4115-4442-b355-b583c1ea8ac8",
+            "resourceName": "sayantikamaity004@gmail.com",
+            "folderKey": "25dbb20a-39b3-4531-b025-748b95166563",
+            "folderFullyQualifiedName": "sayantikamaity004@gmail.com\u0027s workspace",
+            "folderPath": "3b55d53c-433d-4e09-9c80-c47f5b029d0c.25dbb20a-39b3-4531-b025-748b95166563",
+            "type": "Reference",
+            "kind": "connection"
+          }
+        }
+      ]
+    }
+  ]
+}

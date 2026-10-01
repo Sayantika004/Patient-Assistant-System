@@ -1,0 +1,26 @@
+{
+  "docVersion": "1.0.0",
+  "resource": {
+    "name": "Query_Assistant_Agent",
+    "kind": "package",
+    "apiVersion": "orchestrator.uipath.com/v1",
+    "projectKey": "6fa481b4-5205-4a17-97c5-124aedd5ec24",
+    "isOverridable": true,
+    "dependencies": [],
+    "runtimeDependencies": [],
+    "files": [],
+    "folders": [
+      {
+        "fullyQualifiedName": "solution_folder"
+      }
+    ],
+    "spec": {
+      "fileName": null,
+      "fileReference": null,
+      "name": "Query_Assistant_Agent",
+      "description": null
+    },
+    "locks": [],
+    "key": "c9106b28-4621-4deb-88f0-cdc8755fc633"
+  }
+}
